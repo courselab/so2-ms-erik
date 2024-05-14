@@ -1,3 +1,4 @@
+
 #    SPDX-FileCopyrightText: 2024 ms-erik
 #   
 #    SPDX-License-Identifier: GPL-3.0-or-later
@@ -22,9 +23,7 @@
  Overview
  ------------------------------
 
-In this exercise, we implemented a Bare Metal Hello World program, developing an assembler in the C language that takes a .S file as input and produces a flat binary output.
-
-For the purpose of comparison, we compared the output of hw.bin with eg.bin, an example in the professor's repository, and found them to be identical. Even the disassembly of hw.bin matched with hw.S, and the emulator worked perfectly.
+This project was implemented on https://github.com/courselab/so2-MichelH7cker/
 
  Licensing
  -----------------------------

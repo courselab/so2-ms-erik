@@ -1,0 +1,5 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: so2-ms-erik
+Upstream-Contact: ms-erik <erikmelges@usp.br>
+Source: https://github.com/courselab/so2-ms-erik.git
+

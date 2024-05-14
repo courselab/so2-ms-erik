@@ -22,9 +22,13 @@
  Overview
  ------------------------------
 
-In this exercise, we implemented a Bare Metal Hello World program, developing an assembler in the C language that takes a .S file as input and produces a flat binary output.
+ <!-- Delete this comment:
 
-For the purpose of comparison, we compared the output of hw.bin with eg.bin, an example in the professor's repository, and found them to be identical. Even the disassembly of hw.bin matched with hw.S, and the emulator worked perfectly.
+   * Extend this content with information about your awesome project.
+
+   * See .tools/readme.md for detailed instructions.
+
+ -->
 
  Licensing
  -----------------------------

@@ -16,28 +16,23 @@
 #define SIZE 20			/* Read buffer size. */
 
 char buffer[SIZE];		/* Read buffer.      */
+char buffer_dest[SIZE];
 
-int main()
-{
-  clear();
-  
-  println  ("Boot Command 1.0");
+int main(){
+    clear();
+   
+    println  ("Boot Command 1.0");
+    
+    while (1) {
+        print(PROMPT);		/* Show prompt.               */
+        readln(buffer);		/* Read use input.            */
 
-  while (1)
-    {
-      print(PROMPT);		/* Show prompt.               */
-      readln(buffer);		/* Read use input.            */
-
-      if (buffer[0])		/* Execute built-in command.  */
-	{
-	  if (!strcmp(buffer,"help"))
-	    println("A Beattles's song.");
-	  else 
-	    println("Unkown command.");
-	}
+        if (buffer[0]){		/* Execute built-in command.  */
+            strcpy(buffer_dest, buffer); 
+            println(buffer_dest);
+        }
     }
-  
-  return 0;
 
+    return 0;
 }
 

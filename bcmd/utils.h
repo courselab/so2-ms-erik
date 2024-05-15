@@ -12,6 +12,6 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-int __attribute__((fastcall)) strcmp(const char *s1, const char *s2);
+void __attribute__((fastcall)) strcpy(char *dest, const char *src);
 
 #endif  /* UTILS_H  */

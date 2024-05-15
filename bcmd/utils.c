@@ -9,13 +9,11 @@
  *  ms-erik <erikmelges@usp.br>
  */
 
-int __attribute__((fastcall)) strcmp(const char *s1, const char *s2)
-{
-  while (*s1 && *s2 && *s1 == *s2) {
-    s1++;
-    s2++;
+void __attribute__((fastcall)) strcpy(char *dest, const char *src){
+  while (*src != '\0') {
+    *dest = *src;
+    dest++;
+    src++;
   }
-  return (*s1 - *s2);
+  *dest = '\0';
 }
-
-

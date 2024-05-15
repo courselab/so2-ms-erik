@@ -23,7 +23,7 @@
  Overview
  ------------------------------
 
-This project was implemented on https://github.com/courselab/so2-MichelH7cker/
+In this project we implemented a strcpy function that fits within the 512-byte sector, suitable for loading by the BIOS legacy boot process. This implementation addresses the need for the efficient string manipulation within the context of legacy hardware environmnets.
 
  Licensing
  -----------------------------

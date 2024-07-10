@@ -15,7 +15,6 @@
    the signature is the instruction 'jump 0xe', follwed by the character
    sequence 'ty' (we thus jump 14 bytes). */
 
-#define FS_SIGNATURE "\xeb\xety"  /* File system signature.                   */
 #define FS_SIGLEN 4               /* Signature length.                        */
 #define SECTOR_SIZE 512
 

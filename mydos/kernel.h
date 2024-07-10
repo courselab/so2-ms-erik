@@ -34,6 +34,7 @@ struct fsHeader *get_fsHeader();
 
 /* Built-in commands. */
 
+void f_lista();
 void f_help();
 void f_exec();
 void f_quit();

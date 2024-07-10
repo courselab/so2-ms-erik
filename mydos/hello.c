@@ -12,7 +12,8 @@ int main()
 
     puts("Enter your name: ");
     gets(name);
-    puts("Hello ");
+    puts("AOBA ");
     puts(name);
-    puts("\n");
+    puts(", bao?!\n");
+    return 0;
 }

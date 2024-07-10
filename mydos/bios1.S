@@ -59,7 +59,7 @@ set_cursor:
 	## Print 'msg' onto the screen.
 	
 kwrite:
-        pusha			/* Save all GP registers.              */
+    pusha			/* Save all GP registers.              */
 
 	mov %cx, %si		/* Get the start of the buffer in %si. */
     mov $0x0e, %ah          /* BIOS video service: TTY mode.       */
@@ -67,9 +67,9 @@ kwrite:
 kwrite_loop:
 	
 	mov (%si), %al		/* Get each ASCII character.           */
-        cmp $0x0, %al		/* End writing on 0.                   */
-        je kwrite_end
-        int $0x10		/* Call BIOS video service.            */
+    cmp $0x0, %al		/* End writing on 0.                   */
+    je kwrite_end
+    int $0x10		/* Call BIOS video service.            */
 
 	cmp $0xa, %al		/* Automatically convert LF into CR+LF.*/
 	jne kwrite_cont
@@ -77,11 +77,11 @@ kwrite_loop:
 	int $0x10
 kwrite_cont:	
 	
-        inc %si			/* Point to the next character.        */
-        jmp kwrite_loop
+    inc %si			/* Point to the next character.        */
+    jmp kwrite_loop
 kwrite_end:
-        popa			/* Restore all GP registers.           */
-        ret
+    popa			/* Restore all GP registers.           */
+    ret
 
 kwrite_crlf:
 	pusha

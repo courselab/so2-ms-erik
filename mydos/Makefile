@@ -20,7 +20,7 @@
 # dos = "amazingOS" 
 
 #dos=$(shell basename $$(realpath .))
-dos="dolphinOS"
+dos=dolphinOS
 
 # Build the OS and an example user program.
 
@@ -28,7 +28,7 @@ all: $(dos).bin prog.bin
 
 # Link all objects needed by the OS.
 
-$(dos).bin : bootloader.o bios1.o kernel.o kaux.o bios2.o logo.o syscall.o fileSys.o
+$(dos).bin : bootloader.o bios1.o kernel.o kaux.o bios2.o logo.o syscall.o fileSys.o libtydos.o
 	ld -melf_i386 -T tydos.ld --orphan-handling=discard $^ -o $@
 
 # Here we are statically linking the user program 'prob.bin' into the kernel,
@@ -85,15 +85,28 @@ libtydos.a : libtydos.o
 disk.img:
 	rm -f $@
 	dd if=/dev/zero of=$@ count=2880
+	
+# Define the number of reserved sectors
+BOOT_SECTORS = 4
+
+# Define the size of a sector in bytes
+SECTOR_SIZE = 512
+
+# Define the name of the output disk image
+DISK_IMAGE = disk.img
+
+# Define the name of the DOS binary
+DOS_BINARY = dolphinOS.bin
 
 load_in_disk: $(dos).bin
 	dd bs=1 if=$< of=disk.img iseek=16 oseek=16 conv=notrunc
+
 # Housekeeping.
 
 .PHONY: clean
 
 clean:
-	rm -f *.bin *.o *~ *.s *.a
+	rm -f *.bin *.o *~ *.s *.a disk.img
 
 
 ## Bintools: convenience rules for inspecting binary files
@@ -363,9 +376,11 @@ diffa32 da32 a32:
 	xorriso -as mkisofs -b $< -o $@ -isohybrid-mbr $< -no-emul-boot -boot-load-size 4 ./
 
 
+
 #%.img : %.bin
 #	dd if=/dev/zero of=$@ bs=1024 count=1440
 #	dd if=$< of=$@ seek=0 conv=notrunc
+
 
 
 

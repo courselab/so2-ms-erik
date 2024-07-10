@@ -124,6 +124,8 @@ void f_list() {
         }
     }
 }
+
+
 void __stack_chk_fail(void) {
     kwrite("Stack smashing detected!\n");
     while (1) {

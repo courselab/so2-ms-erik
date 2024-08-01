@@ -99,7 +99,7 @@ DISK_IMAGE = disk.img
 DOS_BINARY = dolphinOS.bin
 
 load_in_disk: $(dos).bin
-	dd bs=1 if=$< of=disk.img iseek=16 oseek=16 conv=notrunc
+	dd bs=1 if=$< of=disk.img seek=16 skip=16 conv=notrunc
 
 # Housekeeping.
 
